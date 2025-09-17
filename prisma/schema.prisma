@@ -1,5 +1,4 @@
 
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -10,16 +9,15 @@ datasource db {
   directUrl = env("DIRECT_URL")
 }
         
-                
 model User {
-    id String @id @default(cuid())
-    clerkId String @unique
+  id String @id @default(cuid())
+  clerkId String @unique
 
-    fullName String @db.Text
-    username String @unique
-    avatar String   @db.Text
-    bio String @db.Text
+  fullName String @db.Text
+  username String @unique
+  avatarUrl String @db.Text
+  bio String @db.Text
 
-    createdAt DateTime @default(now())
-    updatedAt DateTime @updatedAt
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
